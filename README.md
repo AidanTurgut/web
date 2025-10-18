@@ -73,8 +73,7 @@ dripemails.org/
 ### Prerequisites
 
 - **Python 3.11+** (3.12.3 recommended)
-- **Node.js 18+** (for frontend development)
-- **MySQL/PostgreSQL** database
+- **MySQL/PostgreSQL/SQLite** database
 - **Redis** (for caching and Celery)
 
 ### Installation
@@ -95,34 +94,30 @@ dripemails.org/
    pip install -r requirements.txt
    ```
 
-3. **Set up frontend**
-   ```bash
-   npm install
-   npm run build
-   ```
 
-4. **Configure environment**
+
+3. **Configure environment**
    ```bash
    cp docs/env.example .env
    # Edit .env with your configuration
    ```
 
-5. **Run migrations**
+4. **Run migrations**
    ```bash
    python manage.py migrate
    ```
 
-6. **Create superuser**
+5. **Create superuser**
    ```bash
    python manage.py createsuperuser
    ```
 
-7. **Start the development server**
+6. **Start the development server**
    ```bash
    python manage.py runserver
    ```
 
-8. **Start the SMTP server** (optional)
+7. **Start the SMTP server** (optional)
    ```bash
    python manage.py run_smtp_server --debug --port 1025
    ```
